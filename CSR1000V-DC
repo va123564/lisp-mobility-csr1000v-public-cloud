@@ -1,0 +1,311 @@
+C1000v-DC#show running-config 
+Building configuration...
+
+Current configuration : 7891 bytes
+!
+! Last configuration change at 06:01:03 UTC Wed Apr 17 2024 by admin
+!
+version 17.3
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service call-home
+platform qfp utilization monitor load 80
+platform punt-keepalive disable-kernel-core
+platform console virtual
+!
+hostname C1000v-DC
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 9 $9$CFDsXlgG1rvf9.$DvjyraMiYC.tysesquDZLcL4gSspFvLzicoLwTRc2wI
+!
+no aaa new-model
+!
+!         
+!
+!
+!
+!
+!
+ip domain name ntt.local
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+! 
+! 
+! 
+! 
+!         
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-1884401597
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-1884401597
+ revocation-check none
+ rsakeypair TP-self-signed-1884401597
+!         
+crypto pki trustpoint SLA-TrustPoint
+ enrollment pkcs12
+ revocation-check crl
+!
+!
+crypto pki certificate chain TP-self-signed-1884401597
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 31383834 34303135 3937301E 170D3234 30343038 31343539 
+  33375A17 0D333430 34303831 34353933 375A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D31 38383434 
+  30313539 37308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 
+  0A028201 0100D76C 4D091BD9 A23A7492 298AB2E9 920B8934 71E976EB 14881E4A 
+  D6BCE0D8 16B96B72 B9799F6B 3CC595E8 F9B7F55E 0A288D27 E7DC4D93 A6AB09E9 
+  E60F6D6E FA81D00A 60CDD204 83AD8978 0C7933D9 E1CBC388 481ADF36 22CC420E 
+  EC7F6491 DEAAB1D4 9A5A1A27 AC97C132 F6611BEB 4BAF88FA C821E7D4 438A6D21 
+  F70E0D99 2219A792 74FC60AD 15E6EE29 4AEAB135 B47384E0 5213FC54 40020270 
+  E7854E19 3FF878AC FF3F4545 78A41625 89EA4564 C2A0DD54 218CB855 30E812D5 
+  FF0D3739 F61F6462 C40A6EFE CB6BEF87 32505DA3 1CF8442D 9301C1B4 2089434C 
+  0E4926E0 910B8635 CB267759 A286704D AF73B65B 2F6950A7 D49D8280 9C2EF4F4 
+  86F90FB3 D8930203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 
+  301F0603 551D2304 18301680 1430E6E2 EAF74EC2 7D8486C4 6BBCB704 E4F6A30B 
+  DB301D06 03551D0E 04160414 30E6E2EA F74EC27D 8486C46B BCB704E4 F6A30BDB 
+  300D0609 2A864886 F70D0101 05050003 82010100 AFC70870 30CF05E4 572F8FFF 
+  20EA9410 C00ECC3F E4E083CB 104E67EB 28B8B096 CDF6FEB9 42E3106C AD0C60F9 
+  BE5CD210 A7056636 E775347D 318F33F6 9B04EC57 E0B6102F E3F97C38 11C3321C 
+  75C0CB9A 767ECF25 8F14ABAB 7287CED2 451945A1 071EE313 1F39FAFF B7BF632F 
+  E72ADB27 64B3DCE7 9F4E3E82 6F257ADD 6328100D DA60C8DA 7E6C8335 0B2CA288 
+  EBDA59A2 A3211D32 0CD36705 17D7A585 5B23DDC5 2C37473B 85DF620C 786143C3 
+  B9EEC06D BC5448E0 320067F3 6547508B CE468C4C EF23DB98 099F62E9 1C3AB71E 
+  E9D98811 FF51ED29 80CE44BB F9B4E37E 9EA41D44 03C29CBF AE985F53 30E18360 
+  C68F6D6B CD8CB3F0 5D2AB0AC 3DDA2603 D2EA8A79
+  	quit
+crypto pki certificate chain SLA-TrustPoint
+ certificate ca 01
+  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030 
+  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363 
+  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934 
+  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305 
+  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720 
+  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 
+  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D 
+  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520 
+  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE 
+  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC 
+  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188 
+  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7 
+  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191 
+  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44 
+  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201 
+  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85 
+  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500 
+  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905 
+  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B 
+  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8 
+  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C 
+  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B 
+  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678 
+  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB 
+  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 
+  D697DF7F 28
+  	quit
+!
+license udi pid CSR1000V sn 9Y9V9U130DC
+license boot level ax
+diagnostic bootup level minimal
+memory free low-watermark processor 71464
+!         
+!
+spanning-tree extend system-id
+!
+username admin privilege 15 secret 9 $9$tCZuvC6BsPFGBk$AHkb2plGIwpBlnE1pTw0IGDHAT3gBvRGvL7TuPWKe/U
+!
+redundancy
+!
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+crypto isakmp policy 200
+ encryption aes
+ authentication pre-share
+ group 2
+ lifetime 28800
+crypto isakmp key cisco address 0.0.0.0        
+crypto isakmp keepalive 10 10
+!
+!
+crypto ipsec transform-set dmvpn esp-aes esp-sha-hmac 
+ mode tunnel
+!
+crypto ipsec profile csr1
+ set transform-set dmvpn 
+!
+!
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.255
+!
+interface Tunnel0
+ ip address 12.0.0.1 255.255.255.0
+ ip mtu 1400
+ ip tcp adjust-mss 1360
+ tunnel source GigabitEthernet1
+ tunnel mode ipsec ipv4
+ tunnel destination 54.169.248.120
+ tunnel protection ipsec profile csr1
+!
+interface LISP0
+!
+interface GigabitEthernet1
+ ip address 110.77.139.250 255.255.255.248
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet2
+ ip address 172.17.152.110 255.255.255.0
+ negotiation auto
+ lisp mobility subnet1
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet3
+ ip address 172.16.11.98 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet4
+ ip address 10.10.11.2 255.255.255.252
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+router lisp
+ locator-set dc
+  1.1.1.1 priority 1 weight 100
+  exit-locator-set
+ !
+ service ipv4
+  itr map-resolver 1.1.1.1
+  etr map-server 1.1.1.1 key cisco
+  etr
+  proxy-etr
+  proxy-itr 1.1.1.1
+  map-server
+  map-resolver
+  exit-service-ipv4
+ !
+ instance-id 0
+  dynamic-eid subnet1
+   database-mapping 172.17.152.0/24 locator-set dc
+   map-notify-group 239.0.0.1
+   exit-dynamic-eid
+  !
+  service ipv4
+   eid-table default
+   exit-service-ipv4
+  !
+  exit-instance-id
+ !
+ site dc
+  authentication-key cisco
+  eid-record 172.17.152.0/24 accept-more-specifics
+  exit-site
+ !
+ exit-router-lisp
+!
+router ospf 1
+ network 1.1.1.1 0.0.0.0 area 0
+ network 12.0.0.0 0.0.0.255 area 0
+!
+ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
+!
+ip route 0.0.0.0 0.0.0.0 110.77.139.249
+ip route 10.10.10.0 255.255.255.0 10.10.11.1
+ip route 10.10.10.0 255.255.255.0 172.17.152.254
+ip route 172.16.11.0 255.255.255.0 GigabitEthernet3 172.16.11.1
+ip route 172.17.152.62 255.255.255.255 2.2.2.2
+ip route 172.17.152.114 255.255.255.255 2.2.2.2
+ip route 172.17.152.225 255.255.255.255 2.2.2.2
+!
+!
+!         
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ login local
+ transport input ssh
+!
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+!
+!
+!
+!
+!
+end
+
+C1000v-DC#
